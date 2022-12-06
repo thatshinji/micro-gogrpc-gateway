@@ -4,7 +4,7 @@
 
 #### install protobuf compiler
 
-download latest Protocol Buffers or what you need.<br/>
+download latest Protocol Buffers or which version you need.<br/>
 link: https://github.com/protocolbuffers/protobuf/releases
 ##### STEPS:
 proto_buf version: protoc-21.10-osx-x86_64.zip
@@ -29,8 +29,8 @@ export PATH=$PATH:$PROTOBUF/bin
 4. it's ok
 
 ```bash
-protoc --version
->> libprotoc 3.21.10
+>> protoc --version
+libprotoc 3.21.10
 ```
 
 #### install go protobuf plugin
