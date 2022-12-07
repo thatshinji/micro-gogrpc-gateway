@@ -39,8 +39,12 @@ libprotoc 3.21.10
 link: https://github.com/grpc-ecosystem/grpc-gateway
 
 ### How to run:
+#### clone this repo:
+```bash
+git clone git@github.com:thatshinji/micro-gogrpc-gateway.git
+```
 #### RPC
-cd dir to micro-gogrpc-gateway
+change directory to micro-gogrpc-gateway
 ```bash
 >> go run main.go
 >> cd client
@@ -49,11 +53,9 @@ cd dir to micro-gogrpc-gateway
 you will see the response in the terminal
 
 #### HTTP
-
 open browser and tap localhost:8080/tarce/{id}, you will see:
 ```json
 // http://localhost:8080/trace/123
-
 {
   "id": "123",
   "trace": {
