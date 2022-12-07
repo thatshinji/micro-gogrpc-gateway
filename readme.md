@@ -1,7 +1,7 @@
 ## a micro go gateway service
 
 ### Model
-[model](https://imgur.com/6oqeGqu)
+![model](./assets/HTTP_GRPC_Model.drawio.png)
 
 ### Installation and Set-up:
 #### install protobuf compiler:
