@@ -8,3 +8,16 @@ message Trace {
   int64 stay_sec = 3;
   string viee_page = 4;
 }
+
+message GetTraceRequest {
+  string id = 1;
+}
+
+message GetTraceResponse {
+  string id = 1;
+  Trace trace = 2;
+}
+
+service TraceService {
+  rpc GetTrace (GetTraceRequest) returns (GetTraceResponse);
+}

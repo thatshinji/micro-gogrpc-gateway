@@ -1,17 +1,20 @@
 package main
 
 import (
-	"fmt"
+	"google.golang.org/grpc"
+	"log"
 	tracepb "micro-gogrpc-gateway/server/proto/gen/go"
-	"time"
+	trace "micro-gogrpc-gateway/server/traceService"
+	"net"
 )
 
 func main() {
-	trace := tracepb.Trace{
-		Time:     int64(time.Now().Unix()),
-		Location: "shanghai",
-		StaySec:  100,
-		VieePage: "home",
+	log.SetFlags(log.Lshortfile)
+	lis, err := net.Listen("tcp", ":8081")
+	if err != nil {
+		log.Fatalf("failed to listen: %v", err)
 	}
-	fmt.Println(&trace)
+	s := grpc.NewServer()
+	tracepb.RegisterTraceServiceServer(s, &trace.Service{})
+	log.Fatalf("err: %v", s.Serve(lis))
 }
